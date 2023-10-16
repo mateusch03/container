@@ -1,0 +1,81 @@
+html, body{
+    font-family: 'Pixel', sans-serif;
+    background-color: lightblue;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@font-face {
+    font-family:'Pixel';
+    src: url('../fonts/PixelifySans-Regular.ttf');
+}
+
+@keyframes in_item {
+    from {background-color: lightgreen;}
+    to {background-color: rgb(120, 197, 120);}
+}
+@keyframes out_item {
+    from {background-color: rgb(120, 197, 120);}
+    to {background-color: lightgreen;}
+}
+
+@keyframes in_container {
+    from{background-color: lightcoral;}
+    to{background-color: rgb(196, 104, 104);} 
+}
+@keyframes out_container {
+    from{background-color: rgb(196, 104, 104);} 
+    to{background-color: lightcoral;}
+}
+
+#container{
+    /*background-image: linear-gradient(to right, lightcoral, rgb(255, 213, 128)); */
+    background-color: lightcoral;
+    animation-name: out_container;
+    animation-duration: 0.2s;
+    width: 60%;
+    height: 60%;
+    display: flex;
+    text-align: center;
+    justify-content: center; /* center element horizontally */
+    /* align-items: center; center element vertically*/
+    align-content: center; /* center element vertically with flex-wrap*/
+    flex-wrap: wrap;
+    border-radius: 30px;
+}
+#container:hover{
+    background-color: rgb(196, 104, 104);
+    animation-name: in_container;
+    animation-duration: 0.2s;
+}
+
+#container #container_title{
+    position: absolute;
+}
+.item, #container_title{
+    margin: 5px;
+}
+
+#container .item{
+    background: lightgreen;
+    animation-name: out_item;
+    animation-duration: 0.2s;
+
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+#container .item:hover{
+    background-color: rgb(120, 197, 120);
+    animation-name: in_item;
+    animation-duration: 0.2s;
+}
